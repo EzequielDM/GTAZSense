@@ -70,5 +70,7 @@ namespace big
 		static void weapons_vehicle_gun();
 
 		static void recovery_casino_loop();
+		static void recovery_max_vehicle_sale();
+		static void recovery_remove_vehicle_cooldown();
 	};
 }

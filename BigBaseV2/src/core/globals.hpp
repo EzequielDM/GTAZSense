@@ -347,6 +347,8 @@ namespace big
 
 		struct recovery {
 			bool rig_casino = false;
+			bool max_vehicle_sale = false;
+			bool remove_vehicle_cooldown = false;
 		};
 
 	public:

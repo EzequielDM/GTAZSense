@@ -206,6 +206,8 @@ namespace big
 		while (g_running)
 		{
 			looped::recovery_casino_loop();
+			looped::recovery_max_vehicle_sale();
+			looped::recovery_remove_vehicle_cooldown();
 
 			script::get_current()->yield();
 		}
