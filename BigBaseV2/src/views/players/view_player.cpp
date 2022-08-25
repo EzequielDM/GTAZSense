@@ -6,6 +6,7 @@
 #include "util/ped.hpp"
 #include "util/teleport.hpp"
 #include "views/view.hpp"
+#include <fiber_pool.hpp>
 
 namespace big
 {
@@ -60,6 +61,12 @@ namespace big
 				components::button("Give Weapons", [] {
 					g_pickup_service->give_player_weapons(g_player_service->get_selected()->id());
 				});
+
+				components::button("Kick player", [] {
+					g_fiber_pool->queue_job([] {
+						NETWORK::NETWORK_SESSION_KICK_PLAYER(g_player_service->get_selected()->id());
+						});
+					});
 
 				ImGui::TreePop();
 			}
@@ -183,6 +190,16 @@ namespace big
 
 					teleport::into_vehicle(veh);
 				});
+
+				ImGui::TreePop();
+			}
+
+			if (ImGui::TreeNode("Troll")) {
+
+				components::button("Explode player", [] {
+					rage::vector3 target = g_player_service->get_selected()->get_ped()->m_position;
+					FIRE::ADD_EXPLOSION(target.x, target.y, target.z, 0, 5.f, 1, 0, 1.f, 0);
+					});
 
 				ImGui::TreePop();
 			}

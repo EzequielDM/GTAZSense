@@ -50,5 +50,15 @@ namespace big
 
 		ImGui::Text("Rockstar ID:");
 		ImGui::InputScalar("##rockstar_id_input", ImGuiDataType_U64, &g->spoofing.rockstar_id);
+
+		ImGui::Separator();
+
+		components::sub_title("DEVELOPER");
+		
+		g_fiber_pool->queue_job([] {
+			PAD::DISABLE_ALL_CONTROL_ACTIONS(0);
+			});
+
+		ImGui::Checkbox("Spoof developer status", &g->spoofing.spoof_dev);
 	}
 }

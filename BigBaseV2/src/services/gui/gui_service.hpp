@@ -11,6 +11,9 @@ namespace big
 		TELEPORT,
 		MOBILE,
 
+		RECOVERY,
+		WAREHOUSE,
+
 		VEHICLE,
 		HANDLING,
 		HANDLING_SEARCH,
@@ -72,6 +75,7 @@ namespace big
 				{ tabs::PERSIST_CAR, { "Persist Car", view::persist_car }},
 				{ tabs::FUN_VEHICLE, { "Fun Features", view::fun_vehicle }},
 			}}},
+			{tabs::RECOVERY, { "Recovery", view::recovery}},
 			{ tabs::WORLD, { "World", nullptr, {
 				{ tabs::SPAWN_PED, { "Spawn Ped", view::spawn_ped }},
 			}}},

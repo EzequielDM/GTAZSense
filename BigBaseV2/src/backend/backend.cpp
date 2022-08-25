@@ -198,4 +198,16 @@ namespace big
 			script::get_current()->yield();
 		}
 	}
+
+	void backend::recovery_loop()
+	{
+		LOG(INFO) << "Starting script: Recovery";
+
+		while (g_running)
+		{
+			looped::recovery_casino_loop();
+
+			script::get_current()->yield();
+		}
+	}
 }

@@ -45,15 +45,15 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 			);
 
 			auto logger_instance = std::make_unique<logger>(
-				"YimMenu",
+				"ZSense",
 				file_manager_instance->get_project_file("./cout.log")
 			);
 
-			EnableMenuItem(GetSystemMenu(FindWindowA(NULL, "YimMenu"), 0), SC_CLOSE, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
+			EnableMenuItem(GetSystemMenu(FindWindowA(NULL, "ZSense"), 0), SC_CLOSE, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 
 			try
 			{
-				LOG(INFO) << "Yim's Menu Initializing";
+				LOG(INFO) << "ZSense Initializing";
 				auto pointers_instance = std::make_unique<pointers>();
 				LOG(INFO) << "Pointers initialized.";
 
@@ -100,6 +100,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 				g_script_mgr.add_script(std::make_unique<script>(&backend::turnsignal_loop, "Turn Signals"));
 				g_script_mgr.add_script(std::make_unique<script>(&backend::disable_control_action_loop, "Disable Controls"));
 				g_script_mgr.add_script(std::make_unique<script>(&context_menu_service::context_menu, "Context Menu"));
+				g_script_mgr.add_script(std::make_unique<script>(&backend::recovery_loop, "Recovery"));
 				LOG(INFO) << "Scripts registered.";
 
 				auto native_hooks_instance = std::make_unique<native_hooks>();

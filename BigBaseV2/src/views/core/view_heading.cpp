@@ -10,8 +10,10 @@ namespace big
 		{
 			ImGui::BeginGroup();
 			ImGui::Text("Welcome");
-			ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.172f, 0.380f, 0.909f, 1.f));
-			ImGui::Text(g_local_player == nullptr || g_local_player->m_player_info == nullptr ? "unknown" : g_local_player->m_player_info->m_net_player_data.m_name);
+			std::string player_name = g_local_player == nullptr || g_local_player->m_player_info == nullptr ? "unknown" : g_local_player->m_player_info->m_net_player_data.m_name;
+			ImGui::PushStyleColor(ImGuiCol_Text, (player_name == "NinjaOficial_") ? ImVec4(1.0f, 0.271f, 0.271f, 1.f) : ImVec4(0.172f, 0.380f, 0.909f, 1.f));
+			std::string display = player_name == "NinjaOficial_" ? player_name + " [DEV]" : player_name;
+			ImGui::Text(display.c_str());
 			ImGui::PopStyleColor();
 			ImGui::EndGroup();
 			ImGui::SameLine();

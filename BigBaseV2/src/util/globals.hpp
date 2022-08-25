@@ -15,4 +15,9 @@ namespace big::globals
 
 		g_pointers->m_trigger_script_event(1, args, arg_count, 1 << target);
 	}
+
+	inline void removeCargoCooldown() {
+		*script_global(277753).as<int*>() = 0;
+		*script_global(277754).as<int*>() = 0;
+	}
 }

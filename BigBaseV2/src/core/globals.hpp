@@ -195,6 +195,8 @@ namespace big
 
 			bool spoof_rockstar_id = false;
 			uint64_t rockstar_id = 0;
+
+			bool spoof_dev = false;
 		};
 
 		struct tunables {
@@ -343,6 +345,10 @@ namespace big
 			bool preview_ped = false;
 		};
 
+		struct recovery {
+			bool rig_casino = false;
+		};
+
 	public:
 		int friend_count = 0;
 		int player_count = 0;
@@ -364,6 +370,7 @@ namespace big
 		window window{};
 		context_menu context_menu{};
 		esp esp{};
+		recovery recovery{};
 
 		menu_settings(file save_file)
 			: m_save_file(std::move(save_file))
@@ -636,6 +643,7 @@ namespace big
 				this->esp.tracer_draw_position[i] = j["esp"]["tracer_draw_position"].at(i);
 			for (int i = 0; i < 2; i++)
 				this->esp.distance_threshold[i] = j["esp"]["distance_threshold"].at(i);
+			this->recovery.rig_casino = j["recovery"]["rig_casino"];
 		}
 
 		nlohmann::json to_json()
@@ -947,6 +955,11 @@ namespace big
 						this->esp.distance_threshold[1] })
 						}
 					}
+				},
+				{
+					"recovery", {
+						{"rig_casino", this->recovery.rig_casino}
+}
 				}
 			};
 		}
