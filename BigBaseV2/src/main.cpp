@@ -72,6 +72,8 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 				auto thread_pool_instance = std::make_unique<thread_pool>();
 				LOG(INFO) << "Thread pool initialized.";
 
+				
+
 				auto context_menu_service_instance = std::make_unique<context_menu_service>();
 				auto custom_text_service_instance = std::make_unique<custom_text_service>();
 				auto globals_service_instace = std::make_unique<globals_service>();
@@ -170,7 +172,7 @@ BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
 				LOG(WARNING) << ex.what();
 			}
 
-			LOG(INFO) << "Farewell!";
+			LOG(INFO) << "Goodbye noob!";
 			logger_instance->destroy();
 			logger_instance.reset();
 

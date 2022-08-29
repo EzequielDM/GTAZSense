@@ -165,6 +165,7 @@ namespace big
 			};
 
 			hotkeys hotkeys{};
+			bool autoKickNonFriends = false;
 		};
 
 		struct spawn_vehicle
@@ -349,6 +350,10 @@ namespace big
 			bool rig_casino = false;
 			bool max_vehicle_sale = false;
 			bool remove_vehicle_cooldown = false;
+			bool remove_repair_cost = false;
+			bool extend_bunker_timers = false;
+			bool reduce_bunker_supply_cost = false;
+			bool rig_blackjack = false;
 		};
 
 	public:
@@ -530,6 +535,7 @@ namespace big
 			this->self.super_run = j["self"]["super_run"];
 
 			this->settings.hotkeys.menu_toggle = j["settings"]["hotkeys"]["menu_toggle"];
+			this->settings.autoKickNonFriends = j["settings"]["kick_nonfriends"];
 
 			this->spawn_vehicle.preview_vehicle = j["spawn_vehicle"]["preview_vehicle"];
 			this->spawn_vehicle.spawn_inside = j["spawn_vehicle"]["spawn_inside"];
@@ -786,7 +792,8 @@ namespace big
 						{ "hotkeys", {
 								{ "menu_toggle", this->settings.hotkeys.menu_toggle }
 							}
-						}
+						},
+						{ "kick_nonfriends", this->settings.autoKickNonFriends}
 					}
 				},
 				{

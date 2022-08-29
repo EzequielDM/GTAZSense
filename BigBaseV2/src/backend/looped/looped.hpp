@@ -38,6 +38,8 @@ namespace big
 		static void system_self_globals();
 		static void system_update_pointers();
 
+		static void system_kick_nonfriends();
+
 		static void vehicle_auto_drive();
 		static void vehicle_boost_behavior();
 		static void vehicle_despawn_bypass();
@@ -72,5 +74,9 @@ namespace big
 		static void recovery_casino_loop();
 		static void recovery_max_vehicle_sale();
 		static void recovery_remove_vehicle_cooldown();
+		static void recovery_remove_repair_cost();
+		static void recovery_extend_bunker_timers();
+		static void recovery_reduce_bunker_supply_cost();
+		static void recovery_rig_blackjack();
 	};
 }

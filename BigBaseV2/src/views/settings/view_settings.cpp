@@ -1,6 +1,7 @@
 #include "views/view.hpp"
 #include "widgets/imgui_hotkey.hpp"
 #include "script_mgr.hpp"
+#include "util/scripts.hpp"
 
 namespace big
 {
@@ -30,6 +31,8 @@ namespace big
 
 		if (ImGui::Hotkey("Menu Toggle", &g->settings.hotkeys.menu_toggle))
 			g->settings.hotkeys.editing_menu_toggle = true; // make our menu reappear
+
+		ImGui::Checkbox("Automatically kick non-friends", &g->settings.autoKickNonFriends);
 
 		ImGui::Text("(Below hotkey is not implemented)");
 		ImGui::Hotkey("Teleport to waypoint", &g->settings.hotkeys.teleport_waypoint);

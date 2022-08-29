@@ -208,6 +208,9 @@ namespace big
 			looped::recovery_casino_loop();
 			looped::recovery_max_vehicle_sale();
 			looped::recovery_remove_vehicle_cooldown();
+			looped::recovery_remove_repair_cost();
+			looped::recovery_extend_bunker_timers();
+			looped::recovery_rig_blackjack();
 
 			script::get_current()->yield();
 		}

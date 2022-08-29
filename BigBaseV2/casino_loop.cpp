@@ -10,6 +10,9 @@ namespace big {
 	static bool busy = false;
 	static int old[196];
 
+	static bool bj_state = false;
+	static bool bj_busy = false;
+
 	void looped::recovery_casino_loop() {
 		if (busy) return;
 		busy = true;
