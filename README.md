@@ -1,79 +1,10 @@
-# YimMenu made possible by [BigBaseV2](https://github.com/Pocakking/BigBaseV2)
-A mod menu base for Grand Theft Auto V.
-Strictly for educational purposes.
+# ZSense made possible by [YimMenu](https://github.com/YimMenu/YimMenu)
+A powerful mod menu for GTA: Online
 
 ## Table of contents
 
- * [How to build](#how-to-build)
-    * [Git](#git)
-    * [Premake5](#premake5)
-    * [Cloning and generating project files](#cloning-and-generating-project-files)
- * [Staying Up To Date](#staying-up-to-date)
- * [Project Structure](#project-structure)
  * [Features](#features)
- * [Contributing](#contributing)
-
-## How to build
-
-Requirements:
-
- * [git](#git)
- * [premake5](#premake5)
-
-If you have both of the above requirements you can skip to [cloning the git repo and generating the project files](#cloning-and-generating-project-files).
-
-### Git
-
-If you haven't installed git on your system go and do so it is **REQUIRED** for setting up a working build environment.
-
-[Download Link](https://git-scm.com/download/win)
-
-### Premake5
-
-Premake5 is used to generate our project files, if you haven't used it before we will need to download and add it to our [System Path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/).
-
-[Download Link](https://premake.github.io/download/)
-
-### Cloning and generating project files
-
-Clone the repository including submodules:
-```bash
-git clone https://github.com/YimMenu/YimMenu.git --recursive || echo "You don't have git installed, install it from https://git-scm.com/download/win"
-```
-
-Go into the directory you just cloned:
-```bash
-cd YimMenu
-```
-
-Generate project files:
-```bash
-GenerateProjects.bat
-```
-
-Now, you will be able to open the solution, and simply build it in Visual Studio.
-
-## Staying Up To Date
-
-Pull the latest changes from Github:
-```bash
-git pull && git submodule update
-```
-
-Make sure your Visual Studio is closed and regenerate project files:
-```bash
-GenerateProjects.bat
-```
-
-## Project Structure
-
-- `api/` contains some basic example of how I'd make REST api calls
-- `backend/` all features that should be ran in a loop are in here sorted by category
-- `gui/` includes everything related to UI elements
-- `hooks/` function hooks
-- `native_hooks/` hooks to natives, currently not implemented
-- `services/` service files to interact and maintain stuff
-- `util/` general utility functions to keep code as compact and as much in one place as possible
+ * [Contributor Rules](#contributing)
 
 ## Features
 
@@ -86,9 +17,17 @@ Below is an incomplete list of feature that I believe are notable to this "base"
  - Updated natives.hpp from https://nativedb.pieceof.art/natives
  - Includes basic code samples to interact with an api
  - ReClass.NET structures implemented, accessible from a global called g_local_player defined in `common.hpp`
+ - Recovery methods for gaining some good cash $$$$
+ - Trolling methods including player kick and crash
+ - More protection options to prevent crashes and kickes even from the most expensive P2C
 
 ## Contributing
 
-You're free to contribute to YimMenu as long as the feature are useful, non-toxic and do not contain anything money related that might get the menu targetted by Take2.
+Welcome to the development team first of all, the rules are simple, clean code and high performance.
+You're free to make branches with your name as a prefix and whatever you're implementing after it.
 
-Make sure to read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+**Example:** edeen-auto-ceo-crates
+
+Which would mean that edeen (big bald man) is developing something related to automating CEO crates or something along those lines, be descriptive but not long, keywords are... key...
+
+Any questions you can just ask me ([@EzequielDM](https://github.com/EzequielDM)) directly.
