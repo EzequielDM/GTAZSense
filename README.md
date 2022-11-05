@@ -19,7 +19,7 @@ Below is an incomplete list of feature that I believe are notable to this "base"
  - ReClass.NET structures implemented, accessible from a global called g_local_player defined in `common.hpp`
  - Recovery methods for gaining some good cash $$$$
  - Trolling methods including player kick and crash
- - More protection options to prevent crashes and kickes even from the most expensive P2C
+ - More protection options to prevent crashes and kicks even from the most expensive P2C
 
 ## Contributing
 
