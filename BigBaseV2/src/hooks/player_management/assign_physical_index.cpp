@@ -36,9 +36,15 @@ namespace big
 			if (g->notifications.player_join.notify)
 				g_notification_service->push("Player Joined", fmt::format("{} taking slot #{} with Rockstar ID: {}", net_player_data->m_name, player->m_player_id, net_player_data->m_rockstar_id2));
 
-			if (g->settings.autoKickNonFriends) {
-				NETWORK::NETWORK_SESSION_KICK_PLAYER(player->m_player_id);
-				notify::display_help_text(fmt::format("Player {} kicked by ZSense", net_player_data->m_name));
+			if (g->settings.autoKickNonFriends && g_player_service->get_self()->is_host()) {
+				if (g_player_service->get_self()->get_net_game_player()->m_player_id != player->m_player_id) {
+					int handle[26];
+					NETWORK::NETWORK_HANDLE_FROM_PLAYER(player->m_player_id, &handle[0], 13);
+					if (NETWORK::NETWORK_IS_HANDLE_VALID(&handle[0], 13) && !NETWORK::NETWORK_IS_FRIEND(&handle[0])) {
+						NETWORK::NETWORK_SESSION_KICK_PLAYER(player->m_player_id);
+						notify::display_help_text(fmt::format("Player {} kicked by ZSense", net_player_data->m_name));
+					}
+				}
 			}
 		}
 		return returnResult;
