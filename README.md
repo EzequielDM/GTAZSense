@@ -23,11 +23,7 @@ Below is an incomplete list of feature that I believe are notable to this "base"
 
 ## Contributing
 
-Welcome to the development team first of all, the rules are simple, clean code and high performance.
-You're free to make branches with your name as a prefix and whatever you're implementing after it.
+Code is now open-sourced as this branch will no longer receive updates to comply with Take-Two latest copyright claims.
 
-**Example:** edeen-auto-ceo-crates
-
-Which would mean that edeen (big bald man) is developing something related to automating CEO crates or something along those lines, be descriptive but not long, keywords are... key...
-
-Any questions you can just ask me ([@EzequielDM](https://github.com/EzequielDM)) directly.
+If you're an employee or Take-Two representative and wish this repository to be taken down or partially altered, please get in contact
+directly through an issue or via my business email provided inside my Profile Page.
