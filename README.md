@@ -1,4 +1,4 @@
-# ZSense made possible by [YimMenu](https://github.com/YimMenu/YimMenu)
+# ZSense made possible by this lovely community
 A powerful mod menu for GTA: Online
 
 ## Table of contents
