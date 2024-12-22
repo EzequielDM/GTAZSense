@@ -57,7 +57,7 @@ jobs:
     needs: build_nightly
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: binary
 
@@ -100,7 +100,7 @@ jobs:
     if: ${{ needs.check_date.outputs.should_run != 'false' }}
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: binary
 
